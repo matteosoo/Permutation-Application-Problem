@@ -19,7 +19,7 @@ int factorial(int n)
 int s; // s種元素
 int sum; // 組合數
 int a[50];
-int iarr[300][5];
+int iarr[1000000][5];
 int maxE = 0;
 int result[10];
 
@@ -68,27 +68,53 @@ int main()
         scanf("%d%d", &n, &k);
         cin >> s;
 
-        if (n == k)
-            sum = 1;
+        if (s == 2)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < s; j++)
+                    cin >> iarr[i][j];
+            }
+
+            int max1 = 0;
+            int max2 = 0;
+            for (int i = 0; i < n; i++)
+            {
+                if (max1 < iarr[i][0])
+                    max1 = iarr[i][0];
+                if (max2 < iarr[i][1])
+                    max2 = iarr[i][1];
+            }
+
+            maxE = max1 + max2;
+            result[t-1] = maxE;
+            t = t-1;
+        }
+
         else
         {
-            int a = factorial(n);
-            int b = factorial(k);
-            int c = factorial(n - k);
-            sum = a / (b*c);
+            if (n == k)
+                sum = 1;
+            else
+            {
+                int a = factorial(n);
+                int b = factorial(k);
+                int c = factorial(n - k);
+                sum = a / (b*c);
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < s; j++)
+                    cin >> iarr[i][j];
+            }
+
+            combination(n, k, 0);
+
+            // printf("%d", maxE);
+            result[t-1] = maxE;
+            t = t-1;
         }
-
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 0; j < s; j++)
-                cin >> iarr[i][j];
-        }
-
-        combination(n, k, 0);
-
-        // printf("%d", maxE);
-        result[t-1] = maxE;
-        t = t-1;
     }
     printf("Output\n");
     for (int i=tt; i>0; i--)
