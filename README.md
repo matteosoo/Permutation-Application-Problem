@@ -1,4 +1,4 @@
-# 計算方法設計 Programming Assignment #1
+# Algorithm Programming Assignment #1
 
 ## Catalog
 > [TOC]
