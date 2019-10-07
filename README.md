@@ -1,4 +1,4 @@
-# Algorithm Programming Assignment #1
+# Permutation-ApplicationProblem
 
 ## Catalog
 > [TOC]
