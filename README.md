@@ -1,4 +1,4 @@
-# Permutation-ApplicationProblem
+# Permutation-Application-Problem
 
 ## Catalog
 > [TOC]
